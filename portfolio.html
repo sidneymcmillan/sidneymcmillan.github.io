@@ -4,7 +4,7 @@
         <title>Sid's Amazing Website</title>
         <style>
             body {
-                background: rgb(2, 255, 200);
+                background: rgb(128, 110,110 );
                 color: rgb(45, 45, 45);
                 padding: 10px;
                 font-family: arial;
@@ -16,15 +16,16 @@
         
             /* navigation menu */
             nav {
-                background: rgb(255, 124, 2);
-                margin: bottom 20px;
+                background: rgb(57, 0, 190);
+                margin: 0 auto;
+                margin-bottom: 20px;
                 display: flex;
                 padding: 10px;
             }
             h1 {
                 display: flex;
                 align-items: center;
-                color: rgb(228, 18, 18);
+                color: rgb(18, 168, 228);
                 flex: 1;
                 margin: 0;
             }
@@ -37,12 +38,12 @@
             }
             a {
                 text-decoration: none;
-                color: rgb(228, 18, 18);
+                color: rgb(18, 168, 228);
             }
         
             /* main container area beneath menu */
             main {
-                background: rgb(255, 124, 2);
+                background: rgb(57, 0, 190);
                 display: flex;
             }
             .sidebar {
@@ -63,6 +64,34 @@
             h2, h3 {
                 margin: 0px;
             }
+
+            /* portfolio styles */
+            .content h1 {
+                color: black;
+            }
+            
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
+
+            
         </style>
     </head>
     
@@ -83,28 +112,18 @@
             </nav>
 
 
-            <main>
-                <!-- Sidebar section -->
-                <div class = 'sidebar'>
-                   <img class = "sidebar- img" src = "images/random.jpg">
-                </div>
+        <main>
+            <div class="content">
+                <h1>Portfolio</h1>
+                <ul id="portfolio">
+                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                </ul>
+            </div>  
 
-                <!-- Content section -->
-                <div class ="content">
 
-                    <h2>SidTheKid</h2>
-                    <p>Student at Northshore High</p>
-                </div>
-                <!-- Interests section -->
-                <div id = "intrests">
-                    <h3>Interests</h3>
-                    <ul>
-                        <li>Gaming</li>
-                        <li>Anime</li>
-                        <li>Skateboarding</li>
-                    </ul>
-                </div>
-            </main>
+        </main>
       </div>
     </body>
 </html>
