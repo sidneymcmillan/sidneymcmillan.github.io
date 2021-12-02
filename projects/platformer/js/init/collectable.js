@@ -37,10 +37,55 @@
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
         // example: 
-        createCollectable(type.steve, 200, 170, 6, 0.7);
+        createCollectable(type.steve, 270, 260, 6, 0.7);
         
-        
-        
+        createCollectable(type.steve, 590, 400, 6, 0.7);
+
+        createCollectable(type.steve, 320, 500, 6, 0.7);
+
+        createCollectable(type.steve, 50, 200, 6, 0.7);
+
+        createCollectable(type.steve, 370, 160, 6, 0.7);
+
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+        createCollectable(type.kennedi, 800, 160, 6, 0.7);
+
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };
