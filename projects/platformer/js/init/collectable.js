@@ -9,7 +9,9 @@
         max: {assetKey: 'max', points: 20},
         steve: {assetKey: 'steve', points: 30},
         grace: {assetKey: 'grace', points: 40},
-        kennedi: {assetKey: 'kennedi', points: 50}
+        kennedi: {assetKey: 'kennedi', points: 50},
+        rupee: {assetKey: 'rupee', points: 50}
+
     };
     
     /**
@@ -85,6 +87,8 @@
         createCollectable(type.kennedi, 800, 160, 6, 0.7);
         createCollectable(type.kennedi, 800, 160, 6, 0.7);
         createCollectable(type.kennedi, 800, 160, 6, 0.7);
+
+        createCollectable(type.rupee, 400, 160, 6, 0.7);
 
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
