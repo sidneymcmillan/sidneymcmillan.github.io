@@ -20,14 +20,21 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
-
+        var circle;
+        var circles = [];
         // TODO 2 : Create a function that draws a circle 
+        function drawCircle(){
+            circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+            physikz.addRandomVelocity(circle, canvas, 5, 5);
+            view.addChild(circle);
+            circles.push(circle);
+        }
+
+        // TODO 3 / 8 : Call the drawCircle() function
+        for (var loopsCompleted = 0; loopsCompleted <= 100; loopsCompleted++){
+            drawCircle(loopsCompleted);
+        } 
         
-
-        // TODO 3 / 8 : Call the drawCircle() function 
-
-
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -39,13 +46,18 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-
+            
+            //was used to make circles move around screen, but deleted to make code more efficient 
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
            
-
+            //was used to keep circles on screen, but deleted to make code more efficient
+            
             // TODO 9 : Iterate over the array
-           
+           for(var i = 0; i <= circles.length - 1; i++) {
+            physikz.updatePosition(circles[i]);
+            game.checkCirclePosition(circles[i]);
+           }
             
         }
     
@@ -61,9 +73,17 @@ var init = function (window) {
                 circle.x = 0;
             }
             
-            // TODO 7 : YOUR CODE STARTS HERE //////////////////////
             
-
+            // TODO 7 : YOUR CODE STARTS HERE //////////////////////
+            if ( circle.y > canvas.height ) {
+                circle.y = 0;
+            }
+            else if (circle.x < 0){
+                circle.x = canvas.width
+            }
+            else if (circle.y < 0){
+                circle.y = canvas.height
+            }
 
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
