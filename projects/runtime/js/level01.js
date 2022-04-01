@@ -25,6 +25,9 @@ var level01 = function (window) {
                 { "type": "sawblade", "x": 2500, "y": groundY -110 },
                 { "type": "sawblade", "x": 2900, "y": groundY -20 },
                 { "type": "sawblade", "x": 2100, "y": groundY -20 },
+                { "type": "sawblade", "x": 2900, "y": groundY -20 },
+                { "type": "sawblade", "x": 2900, "y": groundY -20 },
+
 
 
 
@@ -53,7 +56,7 @@ var level01 = function (window) {
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
