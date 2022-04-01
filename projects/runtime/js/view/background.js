@@ -29,6 +29,7 @@ var background = function (window) {
         var sun;
         var buildings = []
         var clouds;
+        var clouds2
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
@@ -98,9 +99,14 @@ var background = function (window) {
             background.addChild(sun);
             
             clouds = draw.bitmap('img/Clouds.png');
-            clouds.x = 400;
+            clouds.x = 1000;
             clouds.y = groundY - 400;
             background.addChild(clouds);
+
+            clouds2 = draw.bitmap('img/Clouds.png');
+            clouds2.x = 100;
+            clouds2.y = groundY - 400;
+            background.addChild(clouds2);
 
         } // end of render function - DO NOT DELETE
         
@@ -124,6 +130,12 @@ var background = function (window) {
 
             if(clouds.x < -200) {
                 clouds.x = canvasWidth;
+            }
+
+            clouds2.x = clouds2.x - 1;
+
+            if(clouds2.x < -200) {
+                clouds2.x = canvasWidth;
             }
 
             // TODO 5: Part 2 - Parallax
