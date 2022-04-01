@@ -26,8 +26,9 @@ var background = function (window) {
         var background;
         
         // ANIMATION VARIABLES HERE:
-        var tree ;
+        var sun;
         var buildings = []
+        var clouds;
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
@@ -37,7 +38,13 @@ var background = function (window) {
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,'lightblue');
+            var ctx = canvas.getContext("2d"); 
+            var grd = ctx.createLinearGradient(0,canvasHeight,0,0);
+            grd.addColorStop(0.26, "#ffffff");
+            grd.addColorStop(0.3,"#1190EE");
+            grd.addColorStop(1,"#244DF0"); 
+            grd.addColorStop(0.1,"#000000");
+            var backgroundFill = draw.rect(canvasWidth, groundY, grd);
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield
@@ -67,11 +74,16 @@ var background = function (window) {
             }
             
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap('img/tree.png');
-            tree.x = 0;
-            tree.y = groundY - 230;
-            background.addChild(tree);
+            sun = draw.bitmap('img/SunflowerArt.jpg');
+            sun.x = 300;
+            sun.y = groundY - 300;
+            background.addChild(sun);
             
+            clouds = draw.bitmap('img/Clouds.png');
+            clouds.x = 400;
+            clouds.y = groundY - 400;
+            background.addChild(clouds);
+
         } // end of render function - DO NOT DELETE
         
         
@@ -84,12 +96,18 @@ var background = function (window) {
             var groundY = ground.y;
             
             // TODO 4: Part 2 - Move the tree!
-            tree.x = tree.x - 1;
+            sun.x = sun.x - 1;
 
-            if(tree.x < -200) {
-                tree.x = canvasWidth;
+            if(sun.x < -200) {
+                sun.x = canvasWidth;
             }
             
+            clouds.x = clouds.x - 1;
+
+            if(clouds.x < -200) {
+                clouds.x = canvasWidth;
+            }
+
             // TODO 5: Part 2 - Parallax
 
             // loops the buildings and moves them to the left by 0.5 pixels
