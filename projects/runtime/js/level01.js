@@ -16,30 +16,39 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": groundY -100 },
-                { "type": "sawblade", "x": 800, "y": groundY -100 },
-                { "type": "sawblade", "x": 1000, "y": groundY -100 },
-                { "type": "sawblade", "x": 1500, "y": groundY -100 },
-                { "type": "sawblade", "x": 1770, "y": groundY -100 },
-                { "type": "sawblade", "x": 2000, "y": groundY -100 },
-                
+                { "type": "sawblade", "x": 500, "y": groundY -20 },
+                { "type": "sawblade", "x": 900, "y": groundY -110 },
+                { "type": "sawblade", "x": 1100, "y": groundY -20 },
+                { "type": "sawblade", "x": 1600, "y": groundY -110 },
+                { "type": "sawblade", "x": 1870, "y": groundY -110 },
+                { "type": "sawblade", "x": 2100, "y": groundY -20 },
+                { "type": "sawblade", "x": 2500, "y": groundY -110 },
+                { "type": "sawblade", "x": 2900, "y": groundY -20 },
+                { "type": "sawblade", "x": 2100, "y": groundY -20 },
 
-                { "type": "enemy", "x": 300, "y": groundY -50 },
-                { "type": "enemy2", "x": 500, "y": groundY -50 },
-                { "type": "enemy", "x": 1400, "y": groundY -50 },
-                { "type": "enemy2", "x": 1800, "y": groundY -50 },
-                { "type": "enemy", "x": 1650, "y": groundY -50 },
-                { "type": "enemy2", "x": 3500, "y": groundY -50 },
-                { "type": "enemy2", "x": 3750, "y": groundY -50 },
-                { "type": "enemy2", "x": 1000, "y": groundY -50 },
 
-                { "type": "reward", "x": 200, "y": groundY -80 },
-                { "type": "reward", "x": 600, "y": groundY -80 },
-                { "type": "reward", "x": 800, "y": groundY -80 },
-                { "type": "reward", "x": 1150, "y": groundY -80 },
-                { "type": "reward", "x": 1150, "y": groundY -80 },
-                { "type": "reward", "x": 1450, "y": groundY -80 },
-                { "type": "reward", "x": 1870, "y": groundY -80 },
+
+                { "type": "enemy", "x": 400, "y": groundY -50 },
+                { "type": "enemy2", "x": 400, "y": groundY -50 },
+                { "type": "enemy2", "x": 1100, "y": groundY -50 },
+                { "type": "enemy", "x": 1500, "y": groundY -50 },
+                { "type": "enemy", "x": 1750, "y": groundY -50 },
+                { "type": "enemy2", "x": 1900, "y": groundY -50 },
+                { "type": "enemy2", "x": 2500, "y": groundY -50 },
+                { "type": "enemy", "x": 2400, "y": groundY -50 },
+                { "type": "enemy", "x": 2200, "y": groundY -50 },
+
+                { "type": "reward", "x": 300, "y": groundY -80 },
+                { "type": "reward", "x": 700, "y": groundY -80 },
+                { "type": "reward", "x": 900, "y": groundY -80 },
+                { "type": "reward", "x": 1250, "y": groundY -80 },
+                { "type": "reward", "x": 1250, "y": groundY -80 },
+                { "type": "reward", "x": 1550, "y": groundY -80 },
+                { "type": "reward", "x": 1970, "y": groundY -80 },
+                { "type": "reward", "x": 2200, "y": groundY -80 },
+                { "type": "reward", "x": 2500, "y": groundY -80 },
+
+
             ]
         };
         window.levelData = levelData;
@@ -58,7 +67,7 @@ var level01 = function (window) {
             sawBladeHitZone.y = y; //y position of hitzone
             game.addGameItem(sawBladeHitZone); //adds hitzone to game
             
-            var obstacleImage = draw.bitmap('img/sawblade.png'); //drawing the image and storing it in the variable
+            var obstacleImage = draw.bitmap('img/orb.png'); //drawing the image and storing it in the variable
             sawBladeHitZone.addChild(obstacleImage); //add the image to the hitzone so we can see it
             obstacleImage.x = -25; //tweaks the image 25 pixels to the left
             obstacleImage.y = -25;//tweaks the image 25 pixels up
@@ -68,56 +77,56 @@ var level01 = function (window) {
     
 
         function createEnemy (x, y){
-            var enemy = game.createGameItem('enemy',25);
-            var redSquare = draw.bitmap('img/First_Enemy.png');
-            redSquare.x = -25;
-            redSquare.y = -25;
-            enemy.addChild(redSquare);
+            var enemy = game.createGameItem('enemy',25); //creates game item and gives it a hitzone, which stores it to the variable enemy
+            var redSquare = draw.bitmap('img/First_Enemy.png'); //draws image on the canvas and stores it in red square
+            redSquare.x = -25; //x pos of the hitzone in refrence to image's X
+            redSquare.y = -25; //y pos of the hitzone in refrence to image's Y
+            enemy.addChild(redSquare); //adds the image to the hitzone
 
-            enemy.x = x;
-            enemy.y = y;
+            enemy.x = x; //x coordinate of enemy
+            enemy.y = y; //y coordinate of enemy
 
-            game.addGameItem(enemy);
+            game.addGameItem(enemy); //adds enemy to the game
 
-            enemy.velocityX = -1;
+            enemy.velocityX = -1; //moves enemy to the left
 
-            enemy.onPlayerCollision = function() {
-                console.log('The enemy has hit Halle');
-                game.changeIntegrity(-10);
+            enemy.onPlayerCollision = function() { //detects if the player has collided with the enemy
+                console.log('The enemy has hit Halle'); 
+                game.changeIntegrity(-10); //takes away health from the enemy
             };
             
-            enemy.onProjectileCollision = function() {
+            enemy.onProjectileCollision = function() { //detects if the projectile is colliding with the enemy
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(10);
-                game.increaseScore(10);
-                enemy.fadeOut();
+                game.changeIntegrity(10); // adds health if the projectile collides with the enemy
+                game.increaseScore(10); //increases score if the projectile collides with the enemy
+                enemy.fadeOut(); //makes the enemy dissappear if hit
             };
         }
 
         function createEnemy2 (x, y){
-            var enemy = game.createGameItem('enemy2',25);
-            var redSquare = draw.bitmap('img/Second_Enemy.png');
-            redSquare.x = -25;
-            redSquare.y = -25;
-            enemy.addChild(redSquare);
+            var enemy = game.createGameItem('enemy2',25); //creates game item and gives it a hitzone, which stores it to the variable enemy
+            var redSquare = draw.bitmap('img/Second_Enemy.png'); //draws image on the canvas and stores it in red square
+            redSquare.x = -25; //x pos of the hitzone in refrence to image's X
+            redSquare.y = -25; //y pos of the hitzone in refrence to image's Y
+            enemy.addChild(redSquare); //adds the image to the hitzone
 
-            enemy.x = x;
-            enemy.y = y;
+            enemy.x = x; //x coordinate of enemy
+            enemy.y = y; //y coordinate of enemy
 
-            game.addGameItem(enemy);
+            game.addGameItem(enemy); //adds enemy to the game
 
-            enemy.velocityX = -1;
+            enemy.velocityX = -1; //moves enemy to the left
 
-            enemy.onPlayerCollision = function() {
+            enemy.onPlayerCollision = function() { //detects if the player has collided with the enemy
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(-10);
+                game.changeIntegrity(-10); //takes away health from the enemy
             };
             
-            enemy.onProjectileCollision = function() {
+            enemy.onProjectileCollision = function() { //detects if the projectile is colliding with the enemy
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(10);
-                game.increaseScore(10);
-                enemy.fadeOut();
+                game.changeIntegrity(10); // adds health if the projectile collides with the enemy
+                game.increaseScore(10); //increases score if the projectile collides with the enemy
+                enemy.fadeOut(); //makes the enemy dissappear if hit
             };
         }
         

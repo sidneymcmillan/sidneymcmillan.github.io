@@ -50,29 +50,47 @@ var background = function (window) {
             // TODO: 3 - Add a moon and starfield
             //everytime the loop runs it creates a circle with a random x and y respective to the canvas and is added to the background
             for (var i = 0; i < 100; i++){
-                var circle = draw.circle(10,'white','LightGray',2); //creates a variable called circle that holds each circle
+                var circle = draw.circle(4,'white','LightGray',2); //creates a variable called circle that holds each circle
                 circle.x = canvasWidth*Math.random(); //gives a random decimal which places the stars randomly
                 circle.y = groundY*Math.random(); //Does the same thing as the one above
                 background.addChild(circle); //adds circles in background
             }
 
-            var moon = draw.bitmap('img/moon.png'); //Created a variable called moon. Draw.bitmap draws the image and stores it in the image variable
-            moon.x = canvasWidth - 300; //Moves the moon along the X axis 
-            moon.y = groundY - 450; //Moves the moon along the Y axis
-            moon.scaleX = 0.5; //Changes the size of the moon
-            moon.scaleY = 0.5; //Also changes the size of the moon
-            background.addChild(moon); //adds moon in background
+            /*    var moon = draw.bitmap('img/moon.png'); //Created a variable called moon. Draw.bitmap draws the image and stores it in the image variable
+                moon.x = canvasWidth - 300; //Moves the moon along the X axis 
+                moon.y = groundY - 450; //Moves the moon along the Y axis
+                moon.scaleX = 0.5; //Changes the size of the moon
+                moon.scaleY = 0.5; //Also changes the size of the moon
+                background.addChild(moon); //adds moon in background                */
+
+            var logo = draw.bitmap('img/sonic_sega_logo.png'); //Created a variable called moon. Draw.bitmap draws the image and stores it in the image variable
+            logo.x = canvasWidth - 350; //Moves the moon along the X axis 
+            logo.y = groundY - 450; //Moves the moon along the Y axis
+            logo.scaleX = 0.3; //Changes the size of the moon
+            logo.scaleY = 0.3; //Also changes the size of the moon
+            background.addChild(logo); //adds moon in background
+
 
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            for(var i=0;i<5;i++) {
+          /*for(var i=0;i<5;i++) {
                 var buildingHeight = 300; //creates a variable called building height that holds the height of the building in pixels
                 var building = draw.rect(75,buildingHeight,'LightGray','Black',1); //creates a variable caled building that holds the data for the drawn building
                 building.x = 200*i; //positions the x of each building 200 pixels from the next building on each loop
                 building.y = groundY-buildingHeight; //sets the Y of the building off of groundY - buildingHeight
                 background.addChild(building); //adds building to background so it can be seen
                 buildings.push(building); //pushes each individual building to the buildings array
-            }
+            } */
             
+            //I Made The Buildings Into Trees From Sonic
+            for(var i=0;i<7;i++) {
+                var buildingHeight = 387; 
+                var building = draw.bitmap('img/Tree.png'); 
+                building.x = 300*i;
+                building.y = groundY-buildingHeight; 
+                background.addChild(building); 
+                buildings.push(building); 
+            }
+
             // TODO 4: Part 1 - Add a tree
             sun = draw.bitmap('img/SunflowerArt.jpg');
             sun.x = 300;
